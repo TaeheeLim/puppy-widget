@@ -7,8 +7,8 @@
 
   ![platform](https://img.shields.io/badge/platform-Windows-blue)
   ![license](https://img.shields.io/badge/license-Freeware-green)
-  [![release](https://img.shields.io/github/v/release/TaeheeLim/puppy-widget?color=ff8fab)](https://github.com/TaeheeLim/puppy-widget/releases/latest)
-  [![downloads](https://img.shields.io/github/downloads/TaeheeLim/puppy-widget/total?color=ff8fab)](https://github.com/TaeheeLim/puppy-widget/releases)
+  [![release](https://img.shields.io/github/v/release/TaeheeLim/puppy-widget?color=ff8fab&cacheSeconds=300)](https://github.com/TaeheeLim/puppy-widget/releases/latest)
+  [![downloads](https://img.shields.io/github/downloads/TaeheeLim/puppy-widget/total?color=ff8fab&cacheSeconds=300)](https://github.com/TaeheeLim/puppy-widget/releases)
 </div>
 
 ---
