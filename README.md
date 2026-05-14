@@ -17,13 +17,24 @@
 
 ### ▶ [최신 버전 받기](https://github.com/TaeheeLim/puppy-widget/releases/latest)
 
-| 파일 | 설명 |
-|---|---|
-| `PuppyWidget-x.x.x-Setup.exe` | 정식 설치 (시작 메뉴/바탕화면 바로가기 자동 생성) |
-| `PuppyWidget-x.x.x-portable.exe` | 설치 없이 실행 (USB 등에 들고 다닐 때) |
+### Setup.exe vs portable.exe 어떤 걸 받을까요?
 
-> **처음 실행하면 "Windows에서 PC를 보호했습니다" 경고가 뜹니다.**
+| 항목 | **Setup.exe** (정식 설치) | **portable.exe** (포터블) |
+|---|---|---|
+| 설치 과정 | 설치 마법사 진행 | 없음 (다운받고 바로 실행) |
+| 설치 위치 | `Program Files` 등 사용자 선택 | 실행한 폴더에서 동작 |
+| 시작 메뉴 등록 | ✅ | ❌ |
+| 바탕화면 바로가기 | ✅ 자동 생성 | ❌ |
+| 제거 방법 | 제어판 → 프로그램 추가/제거 | `.exe` 파일만 삭제하면 끝 |
+| 데이터 저장 위치 | `%APPDATA%\puppy-widget\` (공통) | `%APPDATA%\puppy-widget\` (공통) |
+| 권장 사용자 | **일반 사용자 (대부분 이걸 받으세요)** | USB로 들고 다닐 때, 회사 PC에서 설치 권한이 없을 때 |
+
+> 💡 **두 버전 모두 데이터는 같은 곳에 저장**되므로 나중에 portable → Setup으로 갈아타도 데이터 그대로 유지됩니다.
+
+> ⚠️ **처음 실행하면 "Windows에서 PC를 보호했습니다" 경고가 뜹니다.**
 > "추가 정보 → 실행"을 누르시면 설치가 진행됩니다. 코드 서명 인증서가 없어서 뜨는 경고이며 안전한 앱입니다.
+
+> 📦 **Source code (zip/tar.gz)** 는 GitHub이 자동으로 만드는 빈 껍데기 파일이에요. 이 README와 아이콘 파일만 들어있으니 받으실 필요 없습니다. 실제 위젯은 위 두 가지 `.exe` 파일을 받으셔야 합니다.
 
 ## 어떤 앱인가요?
 
@@ -123,6 +134,26 @@ Win + R을 누른 뒤 `%APPDATA%\puppy-widget` 을 입력하면 폴더가 열립
 <summary><b>업데이트는 어떻게 받나요?</b></summary>
 
 현재는 자동 업데이트 기능이 없습니다. 새 버전이 나오면 [Releases 페이지](https://github.com/TaeheeLim/puppy-widget/releases/latest)에서 최신 Setup.exe를 다운로드 → 실행하시면 기존 데이터는 유지하면서 업데이트됩니다.
+
+</details>
+
+<details>
+<summary><b>Setup.exe와 portable.exe 중 뭘 받아야 하나요?</b></summary>
+
+대부분의 사용자는 **Setup.exe**를 받으시면 됩니다. 시작 메뉴와 바탕화면에 바로가기를 자동으로 만들어주고, Windows 시작 시 자동 실행 옵션도 정상 동작합니다.
+
+**portable.exe**는 USB로 들고 다니거나, 회사 PC처럼 설치 권한이 없는 환경에서 임시로 쓰실 때 적합합니다. 단점은 시작 메뉴 등록이 안 되고, 매번 .exe 파일을 직접 실행해야 한다는 점이에요.
+
+두 버전 모두 **데이터는 같은 곳(`%APPDATA%\puppy-widget`)에 저장**되므로 나중에 갈아타도 데이터가 유지됩니다.
+
+</details>
+
+<details>
+<summary><b>Release 페이지의 "Source code (zip)" 는 뭔가요?</b></summary>
+
+GitHub이 자동으로 만드는 파일이에요. 이 저장소엔 README와 아이콘 파일밖에 없어서, "Source code"를 받으셔도 그 두 파일만 들어있습니다. **위젯 실행 파일이 아니니 받지 마세요.**
+
+위젯을 받으려면 `Setup.exe` 또는 `portable.exe` 둘 중 하나를 받으셔야 합니다.
 
 </details>
 
