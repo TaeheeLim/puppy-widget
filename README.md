@@ -140,11 +140,31 @@ Win + R을 누른 뒤 `%APPDATA%\puppy-widget` 을 입력하면 폴더가 열립
 <details>
 <summary><b>Setup.exe와 portable.exe 중 뭘 받아야 하나요?</b></summary>
 
-대부분의 사용자는 **Setup.exe**를 받으시면 됩니다. 시작 메뉴와 바탕화면에 바로가기를 자동으로 만들어주고, Windows 시작 시 자동 실행 옵션도 정상 동작합니다.
+대부분의 사용자는 **Setup.exe**를 받으시면 됩니다. 시작 메뉴와 바탕화면에 바로가기를 자동으로 만들어주고, **Windows 시작 시 자동 실행도 정상 동작**합니다.
 
-**portable.exe**는 USB로 들고 다니거나, 회사 PC처럼 설치 권한이 없는 환경에서 임시로 쓰실 때 적합합니다. 단점은 시작 메뉴 등록이 안 되고, 매번 .exe 파일을 직접 실행해야 한다는 점이에요.
+**portable.exe**는 USB로 들고 다니거나, 회사 PC처럼 설치 권한이 없는 환경에서 임시로 쓰실 때 적합합니다. 단, **portable 버전은 자동 실행이 지원되지 않습니다** (매번 임시 폴더에 압축 해제되는 구조라 PC 재시작 시 경로가 사라지기 때문). 자동 실행이 필요하시면 Setup.exe를 받으세요.
 
 두 버전 모두 **데이터는 같은 곳(`%APPDATA%\puppy-widget`)에 저장**되므로 나중에 갈아타도 데이터가 유지됩니다.
+
+</details>
+
+<details>
+<summary><b>PC를 재시작했는데 위젯이 자동 실행되지 않아요</b></summary>
+
+다음을 확인해주세요.
+
+1. **portable.exe로 실행 중인가요?** portable 버전은 자동 실행이 안 됩니다. Setup.exe를 받아 정식 설치해주세요.
+2. **트레이 메뉴 → "윈도우 시작 시 자동 실행"** 이 체크되어 있는지 확인 (트레이 아이콘 우클릭)
+3. **v1.2.3 이전 버전을 쓰고 있다면**, 자동 실행 등록 경로가 잘못 저장됐을 수 있습니다. v1.2.3 이상 Setup.exe로 다시 설치하시면 자동 정리됩니다.
+
+수동으로 잘못된 등록을 정리하려면 PowerShell에서:
+
+```powershell
+Remove-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "PuppyWidget" -ErrorAction SilentlyContinue
+Remove-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "electron" -ErrorAction SilentlyContinue
+```
+
+그 후 위젯을 다시 한 번 실행하면 올바른 경로로 등록됩니다.
 
 </details>
 
@@ -168,6 +188,7 @@ GitHub이 자동으로 만드는 파일이에요. 이 저장소엔 README와 아
 
 | 버전 | 날짜 | 주요 변경사항 |
 |---|---|---|
+| v1.2.3 | 2026-05-14 | PC 재시작 후 자동 실행 안 되던 버그 수정 + 단일 인스턴스 보장 |
 | v1.2.2 | 2026-05-14 | 용품 잔량 갱신 시점 추가 (위젯 열 때 즉시 갱신) |
 | v1.2.1 | 2026-05-14 | 일정 알림 안 가던 버그 수정 |
 | v1.2.0 | 2026-05-14 | 캘린더 뷰, 자동 잔량 계산, 개인 일정, flatpickr 도입 |
